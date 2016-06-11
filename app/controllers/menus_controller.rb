@@ -17,6 +17,7 @@ class MenusController < ApplicationController
   def new
     @menu = Menu.new
     @menu.sections.build 
+    @menu.sections.last.products.build
   end
 
   def edit
@@ -55,6 +56,9 @@ class MenusController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def menu_params
       params.require(:menu).permit(:name, :description, :published,
-                                   :sections_attributes => [:name, :description, :published, :order, :_destroy, :id])
+                                   :sections_attributes => [:name, :description, :published, :order, :_destroy, :id,
+                                                            :products_attributes => [:name, :description, :published, 
+                                                                                     :order, :id, :_destroy, :price,
+                                                                                     :available]])
     end
 end

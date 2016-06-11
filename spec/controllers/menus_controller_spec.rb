@@ -164,8 +164,6 @@ RSpec.describe MenusController, type: :controller do
             put :update, {:id => menu.to_param, 
                           :menu => {:sections_attributes => {"0" => {:id => section.to_param, :_destroy => '1'}}}}, valid_session
             
-            # section.reload
-            # section.reload
             section.destroyed?.should == true
           end
         end
