@@ -29,7 +29,12 @@ describe 'Creating Menus Spec', :type => :feature do
       click_button 'Create Menu'
       Menu.last.published.should == false
     end
-  end
+    
+    it 'should NOT show Destroy button on new form' do
+      visit '/menus/new'
+      page.should_not have_link('Destroy')
+    end
+  end # Control Attributes
   
   describe 'Section Attributes' do
     it 'should save sections' do
@@ -62,48 +67,7 @@ describe 'Creating Menus Spec', :type => :feature do
       Menu.last.sections.first.description.should == d
     end
     
-    describe 'Product Attributes' do
-      it 'should save products' do
-        product_min
-        expect{ click_button 'Create Menu' }.to change{ Product.count }.by(1)
-      end
-      
-      it 'should save :name' do
-        product_min
-        n = Faker::Name.name
-        fill_in 'menu_sections_attributes_0_products_attributes_0_name', :with => n
-        click_button 'Create Menu'
-        Menu.last.sections.last.products.last.name.should == n
-      end
-      
-      it 'should save :description' do
-        product_min
-        d = Faker::Lorem.paragraphs.join('<br><br>')
-        fill_in 'menu_sections_attributes_0_products_attributes_0_description', :with => d
-        click_button 'Create Menu'
-        Menu.last.sections.last.products.last.description.should == d
-      end
-      
-      it 'should save :published' do
-        product_min
-        uncheck 'menu_sections_attributes_0_products_attributes_0_published'
-        click_button 'Create Menu'
-        Menu.last.sections.last.products.last.published.should == false
-      end
-      
-      it 'should save :available' do
-        product_min
-        uncheck 'menu_sections_attributes_0_products_attributes_0_available'
-        click_button 'Create Menu'
-        Menu.last.sections.last.products.last.available.should == false
-      end
-      
-      it 'should NOT save is :_destroy is selected' do
-        product_min
-        check 'menu_sections_attributes_0_products_attributes_0__destroy'
-        expect{ click_button 'Create Menu' }.to_not change{ Product.count }
-      end
-    end # Product Attributes'
+
     
   end # Section Attributes
 end

@@ -22,4 +22,13 @@
 			Available?
 		</label>
 	</div>
+	
+	<% unless f.object.new_record? %>
+		<div class="form-group">
+			<label>
+				<%= f.check_box :_destroy %>
+				Destroy?
+			</label>
+		</div>
+	<% end %>
 <% end %>

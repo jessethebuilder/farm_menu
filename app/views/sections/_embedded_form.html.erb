@@ -1,5 +1,5 @@
 <%= form_builder.fields_for :sections do |f| %>
-	<%= f.hidden_field :order %>
+	<%= f.hidden_field :order, :class => 'section_order_field' %>
 	
 	<div class="form-group">
 		<%= f.label :name %>
@@ -10,7 +10,6 @@
 		<%= f.text_area :description %>
 	</div>
 	
-	<%= embedded_products_form(f) %>
 	
 	<div class="form-group">
 		<label>
@@ -27,4 +26,10 @@
 			</label>
 		</div>
 	<% end %>
+	
+	<%= embedded_products_form(f) %>
 <% end %>
+
+<script>
+	orderSections();
+</script>

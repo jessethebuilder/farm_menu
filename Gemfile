@@ -18,6 +18,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'open_close', :git => 'https://github.com/jessethebuilder/open_close'
 gem 'farm_slugs', :git => 'https://github.com/jessethebuilder/farm_slugs'
 
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'jquery-rails', '~> 4.1.1'
+gem 'jquery-ui-rails', '~> 5.0.5'
+
 group :test, :development do
   # gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
   gem 'faker'

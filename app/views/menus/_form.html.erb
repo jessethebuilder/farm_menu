@@ -1,5 +1,3 @@
-<%= @demo.inspect %>
-
 <%= form_for(@menu) do |f| %>
 	<%= error_messages(@menu) %>
   
@@ -24,5 +22,9 @@
   
   <div class="actions">
     <%= f.submit %>
+    
+    <% unless @menu.new_record? %>
+    	<%= link_to 'Destroy', menu_path(@menu), :method => :delete, :data => {:confirm => 'Are you sure? This is PERMANENT!'} %>
+    <% end %>
   </div>
 <% end %>

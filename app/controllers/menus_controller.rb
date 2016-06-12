@@ -22,6 +22,7 @@ class MenusController < ApplicationController
 
   def edit
     @menu.sections.build
+    @menu.sections.last.products.build
   end
 
   def create
