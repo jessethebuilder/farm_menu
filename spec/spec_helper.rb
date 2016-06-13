@@ -7,11 +7,11 @@ Rails.backtrace_cleaner.remove_silencers!
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-# require 'capybara/poltergeist'
-# Capybara.register_driver :poltergeist do |app|
-  # Capybara::Poltergeist::Driver.new(app, {debug: true})
-# end
-# Capybara.javascript_driver = :poltergeist
+require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {debug: true})
+end
+Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.mock_with :rspec

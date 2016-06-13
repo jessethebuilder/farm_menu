@@ -38,8 +38,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
-  # gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
   gem 'shoulda'
   # gem 'launchy', '~> 2.3.0'
-  # gem 'poltergeist'
+  gem 'poltergeist'
 end
