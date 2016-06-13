@@ -1,3 +1,4 @@
+<div class="well">
 <%= form_builder.fields_for :sections do |f| %>
 	<%= f.hidden_field :order, :class => 'section_order_field' %>
 	
@@ -29,7 +30,4 @@
 	
 	<%= embedded_products_form(f) %>
 <% end %>
-
-<script>
-	orderSections();
-</script>
+</div>
