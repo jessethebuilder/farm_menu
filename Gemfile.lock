@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/yaauie/cliver
+  revision: 5617ce6d9e611cd84d8e8af6119238fe543fedfc
+  ref: 5617ce
+  specs:
+    cliver (0.3.2)
+
+GIT
   remote: https://github.com/jessethebuilder/farm_slugs
   revision: 8e5df57685b02ccf46812c766b29b0d7a86177f8
   specs:
@@ -76,7 +83,6 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
-    cliver (0.3.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     database_cleaner (1.0.1)
@@ -237,6 +243,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2016.4)
       tzinfo (>= 1.0.0)
+    wdm (0.1.1)
     websocket (1.2.3)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
@@ -250,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.0.3.0)
   capybara
+  cliver!
   database_cleaner (~> 1.0.0rc)
   factory_girl_rails
   faker
@@ -267,6 +275,7 @@ DEPENDENCIES
   sqlite3
   timecop
   tzinfo-data
+  wdm
 
 BUNDLED WITH
    1.12.5

@@ -24,10 +24,8 @@ gem 'jquery-rails', '~> 4.1.1'
 gem 'jquery-ui-rails', '~> 5.0.5'
 
 group :test, :development do
-  # gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
   gem 'faker'
   gem 'rspec-rails'
-  # gem 'wdm'
   gem 'database_cleaner', '~> 1.0.0rc'
   gem 'timecop'
   gem 'sqlite3'
@@ -42,4 +40,6 @@ group :test do
   gem 'shoulda'
   # gem 'launchy', '~> 2.3.0'
   gem 'poltergeist'
+  gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
+  gem 'wdm' 
 end

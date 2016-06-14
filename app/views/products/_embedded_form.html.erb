@@ -1,34 +1,39 @@
-<%= form_builder.fields_for :products do |f| %>
-	<div class="form-group">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
-	
-	<div class="form-group">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
-	
-	<div class="form-group">
-		<label>
-			<%= f.check_box :published %>
-			Published?
-		</label>
-	</div>
-	
-	<div class="form-group">
-		<label>
-			<%= f.check_box :available %>
-			Available?
-		</label>
-	</div>
-	
-	<% unless f.object.new_record? %>
-		<div class="form-group">
-			<label>
-				<%= f.check_box :_destroy %>
-				Destroy?
-			</label>
+<div class="products">
+	<h3>Products</h3>
+	<%= form_builder.fields_for :products do |f| %>
+		<div class ="product">
+			<div class="form-group">
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			
+			<div class="form-group">
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</div>
+			
+			<div class="form-group">
+				<label>
+					<%= f.check_box :published %>
+					Published?
+				</label>
+			</div>
+			
+			<div class="form-group">
+				<label>
+					<%= f.check_box :available %>
+					Available?
+				</label>
+			</div>
+			
+			<% unless f.object.new_record? %>
+				<div class="form-group">
+					<label>
+						<%= f.check_box :_destroy %>
+						Destroy?
+					</label>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
-<% end %>
+</div>
